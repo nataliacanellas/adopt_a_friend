@@ -1,3 +1,4 @@
+import 'package:adoption_app/presenter/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -6,21 +7,25 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyanAccent.shade200,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Image.asset(
+            'assets/images/cutie.png',
+            height: 170,
+          ),
+          const SizedBox(height: 15,),
           const Text(
             'Adote um amigo',
             style: TextStyle(
-              fontSize: 35,
-              fontWeight: FontWeight.w400,
+              fontSize: 30,
+              fontWeight: FontWeight.w500,
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.9),
+                color: Color.fromARGB(255, 74, 13, 131).withOpacity(0.4),
                 borderRadius: BorderRadius.circular(16)),
             child: const TextField(
               decoration: InputDecoration(
@@ -33,7 +38,7 @@ class LoginPage extends StatelessWidget {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.9),
+                color: Color.fromARGB(255, 74, 13, 131).withOpacity(0.4),
                 borderRadius: BorderRadius.circular(16)),
             child: const TextField(
               decoration: InputDecoration(
@@ -45,10 +50,14 @@ class LoginPage extends StatelessWidget {
           ),
           Container(
             width: double.maxFinite,
-            margin: const EdgeInsets.only(left: 10, right: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: MaterialButton(
-              color: Colors.black,
-              onPressed: () {},
+              color: Color.fromARGB(255, 74, 13, 131),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
               child: const Text(
                 'LOG IN',
                 style: TextStyle(
@@ -56,6 +65,13 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          TextButton(
+            child: const Text('ou cadastre-se aqui',
+                style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    color: Colors.black87)),
+            onPressed: () async {},
           ),
         ],
       ),
