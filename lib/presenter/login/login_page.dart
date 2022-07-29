@@ -2,6 +2,8 @@ import 'package:adoption_app/presenter/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  static const route = '/login';
+
   const LoginPage({Key? key}) : super(key: key);
 
   @override
@@ -12,9 +14,9 @@ class LoginPage extends StatelessWidget {
         children: [
           Image.asset(
             'assets/images/cutie.png',
-            height: 170,
+            height: 150,
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(height: 10,),
           const Text(
             'Adote um amigo',
             style: TextStyle(
@@ -26,24 +28,26 @@ class LoginPage extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             decoration: BoxDecoration(
                 color: Color.fromARGB(255, 74, 13, 131).withOpacity(0.4),
-                borderRadius: BorderRadius.circular(16)),
+                borderRadius: BorderRadius.circular(10)),
             child: const TextField(
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(10),
-                hintText: 'janedoe@example.com',
+                labelText: 'Email',
+                labelStyle: TextStyle(fontSize: 15, color: Colors.black45),
                 border: InputBorder.none,
               ),
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             decoration: BoxDecoration(
                 color: Color.fromARGB(255, 74, 13, 131).withOpacity(0.4),
-                borderRadius: BorderRadius.circular(16)),
+                borderRadius: BorderRadius.circular(10)),
             child: const TextField(
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(10),
-                hintText: '**********',
+                labelText: 'Senha',
+                labelStyle: TextStyle(fontSize: 15, color: Colors.black45),
                 border: InputBorder.none,
               ),
             ),
@@ -54,9 +58,7 @@ class LoginPage extends StatelessWidget {
             child: MaterialButton(
               color: Color.fromARGB(255, 74, 13, 131),
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const HomePage()),
-                );
+                Navigator.of(context).pushNamed(HomePage.route);
               },
               child: const Text(
                 'LOG IN',

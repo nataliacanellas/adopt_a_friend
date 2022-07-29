@@ -1,13 +1,16 @@
+import 'package:adoption_app/presenter/splash/splash_screen.dart';
+
+import 'core/app_routes.dart';
 import 'package:flutter/material.dart';
 
-import 'presenter/splash/splash_screen.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+     MaterialApp(
       title: 'AdoteUmAmigo',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      initialRoute: SplashScreen.route ,
+      routes: appRoutes,
     ),
   );
 }

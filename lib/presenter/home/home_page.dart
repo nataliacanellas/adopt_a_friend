@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../catalog/catalog_page..dart';
 
 class HomePage extends StatelessWidget {
+  static const route = '/';
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -22,6 +23,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
+              
               height: 240,
               width: 280,
               margin: const EdgeInsets.symmetric(
@@ -29,9 +31,9 @@ class HomePage extends StatelessWidget {
                 horizontal: 15,
               ),
               child: TextButton(
-                onPressed: () {Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const CatalogPage()),
-                );},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(CatalogPage.route);
+                },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
